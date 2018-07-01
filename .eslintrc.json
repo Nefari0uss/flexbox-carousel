@@ -1,0 +1,27 @@
+{
+  "env": {
+      "browser": true,
+      "es6": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+      "sourceType": "module",
+      "emcaVersion": 6
+  },
+  "rules": {
+      "strict": 0,
+      "indent": [ "error", 4 ],
+      "linebreak-style": [ "error", "unix" ],
+      "quotes": [ "error", "double" ],
+      "semi": [ "error", "always" ],
+      "no-console": [ "off" ],
+      "no-unused-vars": [ "off", {
+          "vars": "local"
+      }],
+      "comma-dangle": "off"
+  },
+  "globals" : {
+      "__dirname": false,
+      "module": false
+  }
+}
