@@ -8,3 +8,9 @@ A carousel made using flexbox; no third party libraries.
 
 1) `npm install`
 2) `npm start`
+
+
+Adapted from [here](https://blog.envylabs.com/the-order-property-flexbox-carousels-87a168567820).
+
+
+Currently WIP. Screenshots to be added soon.
