@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nefari0uss">
+    <meta name="description" content="Flexbox Carousel">
+    <title>Flexbox Carousel</title>
+</head>
+
+<body>
+    <div id="window">
+        <div class="flex-container transition-forward">
+            <div class="flex-item">
+                <h2>1</h2>
+            </div>
+            <div class="flex-item">
+                <h2>2</h2>
+            </div>
+            <div class="flex-item">
+                <h2>3</h2>
+            </div>
+            <div class="flex-item">
+                <h2>4</h2>
+            </div>
+            <div class="flex-item">
+                <h2>5</h2>
+            </div>
+            <div class="flex-item">
+                <h2>6</h2>
+            </div>
+            <div class="flex-item reference-item">
+                <h2>7</h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="buttons">
+        <button id="backButton">Back</button>
+        <button id="forwardButton">Forward</button>
+        <button id="printOrder">Print Order</button>
+        <button id="clearButton" onClick="console.clear()">Clear Console</button>
+    </div>
+
+    <div id="debug-info">
+        <p>Reference Item is: <span id="is"></span>, was: <span id="was"></span></p>
+    </div>
+
+</body>
+
+</html>
+ 
