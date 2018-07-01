@@ -2,7 +2,7 @@
 
 ## Nefari0uss
 
-A carouel made using flexbox; no third party libraries.
+A carousel made using flexbox; no third party libraries.
 
 ### Installation
 
