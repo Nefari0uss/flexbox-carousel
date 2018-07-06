@@ -1,6 +1,7 @@
 @import "background-colors";
 
 $flex-container-size: 100%;
+$flex-item-size: 300px;
 
 #window {
     width: 100%;
@@ -34,9 +35,17 @@ $flex-container-size: 100%;
     
 }
 
-.flex-container.transition-forward {
-    transform: none;
+.flex-container.stasis {
+    transform: none !important;
     transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.flex-container.slide-forward {
+    transform: translateX($flex-item-size);
+}
+
+.flex-container.slide-backward {
+    transform: translateX($flex-item-size * -1);
 }
 
 .flex-container {
@@ -46,22 +55,29 @@ $flex-container-size: 100%;
     box-sizing: border-box;
     min-height: min-content;
     width: $flex-container-size;
+    left: $flex-item-size * -1; 
 
     position: relative;
-    left: -100%;
-    transform: translateX(100%);
-
-    .flex-item {
+        .flex-item {
         color: #aaa;
         font-size: 2rem;
         font-weight: normal;
         text-align: center;
-        min-width: 100%;
+        width: 300px;
 
         order: 2;
         //transition: order 250ms ease-in-out;
 
-        h2 {
+        .img-container {
+            margin: 1vh 1vw;
+            img {
+                width: 260px;
+                height: 260px;
+                object-fit: contain;
+            }
+        }
+
+        .cta-container {
             color: #aaa;
             font-size: 4rem;
             font-weight: normal;
