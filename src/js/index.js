@@ -23,7 +23,7 @@ function createItem() {
 
     let img = document.createElement("img");
     img.src = "https://cdnb.artstation.com/p/assets/images/images/005/060/083/large/astri-lohne-sjursen-mononokeb.jpg?1488213693";
-    img.alt = "Princess Monomuke";
+    img.alt = "Princess Mononoke";
     div.appendChild(img);
 
     let div2 = document.createElement("div");
