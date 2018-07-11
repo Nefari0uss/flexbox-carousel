@@ -2,20 +2,53 @@
 
 $flex-container-size: 100%;
 $flex-item-size: 300px;
+$spacing: 10px;
 
-#window {
+#pd-container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
     width: 100%;
-    padding: 1vh 1vw;
-    background: cadetblue;
-    box-sizing: border-box;
-    overflow:hidden;
+
+    button {
+        border: 0;
+        width: 10%;
+        min-height: 10vh;
+        height: 15vh;
+        border-radius: 5px;
+        color: #eee;
+        background: #aaa;
+        padding: 1vh 1vw;
+        margin: 1vh 1vw;
+        box-sizing: border-box;
+        align-self: center;
+
+        &:hover,
+        &:focus {
+            background: gray;
+        }
+    }
+
+    #pd-window {
+        width: 80%;
+        border-radius: 5px;
+        background: cadetblue;
+        box-sizing: border-box;
+        overflow: hidden;
+        display: inline-block;
+    }
+}
+
+.pd-hidden-item {
+    display: block;
+    // visibility: hidden;
 }
 
 #buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     button {
         border: 0;
         min-width: 10%;
@@ -23,7 +56,9 @@ $flex-item-size: 300px;
         color: #eee;
         background: #aaa;
         padding: 1vh 1vw;
-        &:hover, &:focus {
+
+        &:hover,
+        &:focus {
             background: gray;
         }
 
@@ -32,62 +67,64 @@ $flex-item-size: 300px;
         width: fit-content;
         box-sizing: border-box;
     }
-    
 }
 
-.flex-container.stasis {
+.pd-flex-container.pd-stasis {
     transform: none !important;
     transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
-.flex-container.slide-forward {
+.pd-flex-container.pd-slide-forward {
     transform: translateX($flex-item-size);
 }
 
-.flex-container.slide-backward {
+.pd-flex-container.pd-slide-backward {
     transform: translateX($flex-item-size * -1);
 }
 
-.flex-container {
+.pd-flex-container {
     display: inline-flex;
     flex-flow: row nowrap;
     justify-content: left;
     box-sizing: border-box;
     min-height: min-content;
     width: $flex-container-size;
-    left: $flex-item-size * -1; 
-
+    left: $flex-item-size * -1;
     position: relative;
-        .flex-item {
+
+    .pd-flex-item {
         color: #aaa;
         font-size: 2rem;
         font-weight: normal;
         text-align: center;
         width: 300px;
+        margin: 20px;
+        box-sizing: border-box;
+        order: 2; //transition: order 250ms ease-in-out;
 
-        order: 2;
-        //transition: order 250ms ease-in-out;
+        .pd-img-container {
+            margin: $spacing $spacing;
 
-        .img-container {
-            margin: 1vh 1vw;
             img {
                 width: 260px;
                 height: 260px;
                 object-fit: contain;
             }
+
         }
 
-        .cta-container {
+        .pd-cta-container {
             color: #aaa;
-            font-size: 4rem;
+            font-size: 1.5rem;
             font-weight: normal;
-            padding: 2vh 2vw;
+            padding: 2*$spacing 2*$spacing;
             text-align: center;
         }
+
     }
 
-    .flex-item.reference-item {
+    .pd-flex-item.reference-item {
         order: 1;
     }
-}
 
+}

@@ -1,8 +1,8 @@
 import "../sass/_styles";
 
-let container = document.querySelector(".flex-container");
-let flexItems = () => { return document.querySelectorAll(".flex-item");};
-let ri = "reference-item";
+let container = document.querySelector(".pd-flex-container");
+let flexItems = () => { return document.querySelectorAll(".pd-flex-item");};
+let ri = "pd-reference-item";
 
 function getFlexItemsCount() {
     return flexItems().length == null ? 0 : flexItems().length;
@@ -12,14 +12,14 @@ function createItem() {
     console.log("Creating item.");
 
     let fi = document.createElement("div");
-    fi.classList.add("flex-item");
+    fi.classList.add("pd-flex-item");
 
-    if (getFlexItemsCount() == 0) {
-        fi.classList.add("reference-item");
+    if (getFlexItemsCount() == 0 || document.querySelector(ri) == null) {
+        fi.classList.add(ri);
     }
 
     let div = document.createElement("div");
-    div.classList.add("img-container");
+    div.classList.add("pd-img-container");
 
     let img = document.createElement("img");
     img.src = "https://cdnb.artstation.com/p/assets/images/images/005/060/083/large/astri-lohne-sjursen-mononokeb.jpg?1488213693";
@@ -27,7 +27,7 @@ function createItem() {
     div.appendChild(img);
 
     let div2 = document.createElement("div");
-    div.classList.add("cta-container");
+    div2.classList.add("pd-cta-container");
     div2.innerHTML = getFlexItemsCount().toString();
 
     fi.appendChild(div);
@@ -52,9 +52,9 @@ function getPreviousItem(el) {
 }
 
 function transition(num) {
-    let stasis = "stasis";
-    let forward = "slide-forward";
-    let backward = "slide-backward";
+    let stasis = "pd-stasis";
+    let forward = "pd-slide-forward";
+    let backward = "pd-slide-backward";
 
     if (num == 1) {
         container.classList.remove(backward);
@@ -111,7 +111,7 @@ function incrementOrder(el) {
 }
 
 function changeOrderBack() {
-    let boxes = document.querySelectorAll(".flex-item");
+    let boxes = document.querySelectorAll(".pd-flex-item");
     console.log(boxes.length);
 
     for (let i = 0; i < boxes.length; i++) {
@@ -153,7 +153,7 @@ function changeOrder() {
 }
 
 function printOrder() {
-    let boxes = document.querySelectorAll(".flex-item");
+    let boxes = flexItems();
     console.log(boxes, boxes.length);
 
     for (let box of boxes) {
@@ -166,13 +166,11 @@ function printOrder() {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    for(let i = 0; i < 6; i++) {
-        createItem();
-    }
+    for(let i = 0; i < 6; i++) createItem();
 
-    document.querySelector("#backButton").addEventListener("click", () => { goBack(); });
+    document.querySelector("#pd-backButton").addEventListener("click", () => { goBack(); });
 
-    document.querySelector("#forwardButton").addEventListener("click", () => { goForward(); });
+    document.querySelector("#pd-forwardButton").addEventListener("click", () => { goForward(); });
 
     document.querySelector("#printOrder").addEventListener("click", () => { printOrder(); });
 
