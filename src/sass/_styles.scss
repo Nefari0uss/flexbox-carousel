@@ -1,13 +1,38 @@
 @import "background-colors";
+@import "hidden-items";
+@import "general";
+@import "z-index";
+
+@import "shade";
 
 $flex-container-size: 100%;
 $flex-item-size: 300px;
 $spacing: 10px;
 
+
+#promo-drawer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#pd-box {
+    @include center;
+    flex-flow: column nowrap;
+
+    #pd-box-handle {
+        @include center;
+        @include pad;
+
+        border: 1px black solid;
+        width: min-content;
+    }
+}
+
 #pd-container {
-    display: flex;
-    align-content: center;
-    justify-content: center;
+    @include center;
+
     width: 100%;
 
     button {
@@ -44,7 +69,7 @@ $spacing: 10px;
     // visibility: hidden;
 }
 
-#buttons {
+#pd-buttons {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,0 +1,15 @@
+$pd-z: 1000;
+$pd-shade-z: $pd-z + 1;
+$pd-box-z: $pd-shade-z + 1;
+
+#promo-drawer {
+    z-index: $pd-z;
+}
+
+#pd-overlay {
+    z-index: $pd-shade-z;
+}
+
+#pd-box {
+    z-index: $pd-box-z;
+}

@@ -10,30 +10,38 @@
 </head>
 
 <body>
-    <div id="pd-container">
-        <button id="pd-backButton">Back</button>
-        <div id="pd-window">
-            <div class="pd-flex-container pd-slide-forward">
-                <div class="pd-flex-item pd-reference-item pd-hidden-item" style="order: 0;">
-                    <div class="pd-img-container">
-                        <img alt="Princess Mononoke" title="" style="" src="https://pre00.deviantart.net/2a21/th/pre/i/2018/128/d/5/princess_mononoke_by_cglas-dcb024o.jpg">
+    <div id="promo-drawer">
+        <div id="pd-overlay" class="hidden"></div>
+        <div id="pd-box">
+            <div id="pd-box-handle">Click or Drag Me!</div>
+            <div id="pd-container" class="hidden">
+                <button id="pd-backButton">Back</button>
+                <div id="pd-window">
+                    <div class="pd-flex-container pd-slide-forward">
+                        <div class="pd-flex-item pd-reference-item pd-hidden-item" style="order: 0;">
+                            <div class="pd-img-container">
+                                <img alt="Princess Mononoke" title="" style="" src="https://pre00.deviantart.net/2a21/th/pre/i/2018/128/d/5/princess_mononoke_by_cglas-dcb024o.jpg">
+                            </div>
+                            <div class="pd-cta-container">Hidden Flex Item</div>
+                        </div>
                     </div>
-                    <div class="pd-cta-container">Hidden Flex Item</div>
                 </div>
+                <button id="pd-forwardButton">Forward</button>
+            </div>
+            <div id="pd-buttons" class="hidden">
+                <button id="printOrder">Print Order</button>
+                <button id="clearButton" onClick="console.clear()">Clear Console</button>
+                <button id="createElement">Create Item</button>
+                <button id="deleteElement">Delete Item</button>
+            </div>
+
+            <div id="pd-debug-info" class="hidden">
+                <p>Reference Item is:
+                    <span id="is"></span>, was:
+                    <span id="was"></span>
+                </p>
             </div>
         </div>
-        <button id="pd-forwardButton">Forward</button>
-    </div>
-
-    <div id="buttons">
-        <button id="printOrder">Print Order</button>
-        <button id="clearButton" onClick="console.clear()">Clear Console</button>
-        <button id="createElement">Create Item</button>
-        <button id="deleteElement">Delete Item</button>
-    </div>
-
-    <div id="debug-info">
-        <p>Reference Item is: <span id="is"></span>, was: <span id="was"></span></p>
     </div>
 
 </body>
